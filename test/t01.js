@@ -1,0 +1,4 @@
+function fact(n) {
+    return n < 3 ? n : n * fact(n - 1);
+}
+console.log(fact(5));

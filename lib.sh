@@ -10,7 +10,7 @@ ClangOptions() {
     # padding: something to consider much later
     # gnu stuff: research and consider later
     echo -g  \
-         -std=c11 \
+         -std=gnu11 \
          -O0 \
          -Weverything \
          -Wno-format-security \
@@ -42,5 +42,5 @@ GetRuntimeLibs() {
 }
 
 LibuvDylib() {
-  echo ./runtime/vendor/libuv-1.26.0/out/cmake/libuv.dylib
+  echo ./runtime/vendor/libuv-1.26.0/out/cmake/libuv.so
 }
