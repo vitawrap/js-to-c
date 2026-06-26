@@ -7,7 +7,7 @@ set -euo pipefail
 source lib.sh
 
 main() {
-    clang -dynamiclib $(ClangOptions) $(GetRuntimeLibs) $(LibuvDylib) -o out/runtime.dylib
+    clang -shared -fPIC $(ClangOptions) $(GetRuntimeLibs) $(LibuvDylib) -o out/runtime.so
 }
 
 main $@

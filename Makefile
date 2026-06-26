@@ -1,13 +1,13 @@
-build: js-build/js-to-c.js out/runtime.dylib out/prelude.dylib
+build: js-build/js-to-c.js out/runtime.so out/prelude.so
 
 js-build/js-to-c.js: src/*.ts
 	tsc
 
-out/runtime.dylib: runtime/*.c
-	./runtime/scripts/compile-dylib
+out/runtime.so: runtime/*.c
+	./runtime/scripts/compile-so
 
-out/prelude.dylib: js-build/js-to-c.js runtime/prelude.js out/runtime.dylib
-	./compile-js-lib prelude runtime/prelude.js out/prelude.dylib
+out/prelude.so: js-build/js-to-c.js runtime/prelude.js out/runtime.so
+	./compile-js-lib prelude runtime/prelude.js out/prelude.so
 
 .PHONY: clean
 clean:

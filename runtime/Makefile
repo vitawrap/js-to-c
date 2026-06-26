@@ -1,10 +1,10 @@
 # TODO would be good to move this duplication out into lib.sh
 all_source_including_tests=$(wildcard *.h *.c)
 source_files=$(filter-out %.test.c %.h, $(all_source_including_tests))
-all_deps=$(source_files)  vendor/libuv-1.26.0/out/cmake/libuv.dylib
+all_deps=$(source_files)  vendor/libuv-1.26.0/out/cmake/libuv.so
 source_with_headers=$(filter-out %.test.c, $(all_source_including_tests))
 all_tests=$(filter %.test.c, $(all_source_including_tests))
-libuv="vendor/libuv-1.26.0/out/cmake/libuv.dylib"
+libuv="vendor/libuv-1.26.0/out/cmake/libuv.so"
 
 CC=clang
 CLANG_OPTS=-std=c11 -O0 -g -Weverything -Wno-format-security -Wno-format-pedantic -Wno-float-equal -Wno-padded -Wno-gnu-folding-constant -Wno-gnu-folding-constant -Wno-missing-noreturn
